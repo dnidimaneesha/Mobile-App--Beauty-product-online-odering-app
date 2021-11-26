@@ -1,12 +1,22 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View, ImageBackground} from 'react-native';
+import {PrimaryButton} from '../components/Button';
 
 export default class LoadingScreen extends Component {
+ 
+  Onpress = () => {
+    this.props.navigation.navigate('Home');
+  };
+
   render() {
     return (
-      <View>
-        <Text>Loding Screen</Text>
-      </View>
+      <ImageBackground
+        style={{flex: 1}}
+        source={require('../assets/images/imagelogo.png')}>
+        <View>
+          <PrimaryButton onPress={this.Onpress} title="Get Started" />
+        </View>
+      </ImageBackground>
     );
   }
 }
