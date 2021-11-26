@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {View, ImageBackground} from 'react-native';
+import {View, Text, Image, StyleSheet, ImageBackground} from 'react-native';
 import {PrimaryButton} from '../components/Button';
 
 export default class LoadingScreen extends Component {
- 
   Onpress = () => {
     this.props.navigation.navigate('Home');
   };
