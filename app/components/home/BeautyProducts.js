@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -39,7 +40,16 @@ export default function BeautyProducts({navigation, ...props}) {
         <TouchableOpacity
           key={index}
           activeOpacity={0.7}
-          style={{marginTop: 15}}>
+          style={{marginTop: 15}}
+          onPress={() =>
+            navigation.navigate('ShopDetails', {
+              name: shop.name,
+              image: shop.image_url,
+              price: shop.price,
+              reviews: shop.reviews,
+              rating: shop.rating,
+              categories: shop.categories,
+            })
           }>
           <View
             key={index}
