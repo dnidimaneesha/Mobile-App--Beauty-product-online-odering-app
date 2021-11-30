@@ -17,6 +17,25 @@ export default function Home({navigation}) {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Categories navigation={navigation} />
+        <View
+          style={{
+            marginTop: 15,
+            backgroundColor: '#fff',
+            paddingVertical: 10,
+            paddingLeft: 20,
+            marginBottom: -6,
+          }}>
+          <Text
+            style={{
+              marginTop: 10,
+              textAlign: 'center',
+              color: 'black',
+              fontSize: 15,
+              marginBottom: 10,
+            }}>
+            Free Delivery Prodct CLick Shops 👇{' '}
+          </Text>
+        </View>
         <BeautyProducts shopData={shopData} navigation={navigation} />
       </ScrollView>
     </SafeAreaView>
