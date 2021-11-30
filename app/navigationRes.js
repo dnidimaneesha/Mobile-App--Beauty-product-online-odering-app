@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import Home from './screens/Home';
 import LoadingScreen from './screens/LoadingScreen';
 import BeautyItems from './screens/BeautyItems';
+import ShopDetails from './screens/ShopDetails';
 
 export default function RootNavigation() {
   const Stack = createStackNavigator();
@@ -20,6 +21,7 @@ export default function RootNavigation() {
         <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="BeautyItems" component={BeautyItems} />
+        <Stack.Screen name="ShopDetails" component={ShopDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
