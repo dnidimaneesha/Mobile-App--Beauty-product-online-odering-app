@@ -21,13 +21,13 @@ export default function About(props) {
 }
 
 const ShopImage = props => (
-  <Image source={{uri: props.image}} style={{width: '100%', height: 150}} />
+  <Image source={{uri: props.image}} style={{width: '100%', height: 100}} />
 );
 
 const ShopName = props => (
   <Text
     style={{
-      fontSize: 29,
+      fontSize: 23,
       fontWeight: '600',
       marginTop: 10,
       marginHorizontal: 15,
