@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
 import {Divider} from 'react-native-elements/dist/divider/Divider';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 const beautyItems = [
   {
@@ -114,6 +115,14 @@ export default function Items(ShopName) {
       {beautyItems.map((beautyItem, index) => (
         <View key={index}>
           <View style={styles.ItemStyle}>
+            <BouncyCheckbox
+              iconStyle={{
+                borderColor: '#b289b0',
+                borderRadius: 0,
+                marginLeft: 20,
+              }}
+              fillColor="#c572c4"
+            />
             <ItemInfo beautyItem={beautyItem} />
             <ItemImage beautyItem={beautyItem} />
           </View>
