@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
 import {Divider} from 'react-native-elements/dist/divider/Divider';
-import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 const beautyItems = [
   {
@@ -55,6 +54,27 @@ const beautyItems = [
       'https://d1duy8jr72udoh.cloudfront.net/wp-content/uploads/2015/02/picture-polish-karma-holographic-nail-polish.png',
   },
   {
+    title: 'pink small Wallet',
+    description: 'Hand made',
+    price: '$500.00',
+    image:
+      'https://ae01.alicdn.com/kf/HTB1E.57XsfrK1RkSnb4q6xHRFXaa/New-purse-short-women-s-purse-long-thin-lovely-zipper-small-pocket-wallet-student-style-card.jpg',
+  },
+  {
+    title: 'Blue Small Wallet ',
+    description: 'lether',
+    price: '$800.00',
+    image:
+      'https://ae01.alicdn.com/kf/HTB1sEw.wr5YBuNjSspoq6zeNFXaJ/Luxury-Brand-Cute-mini-wallet-Ladies-Short-Leather-Wallets-Womens-Wallets-and-Purses-Wallet-Women-Card.jpg',
+  },
+  {
+    title: 'Black Wallet ',
+    description: 'lether',
+    price: '$450.00',
+    image: 'https://img1.junaroad.com/uiproducts/9566695/pri-1445357222.jpg',
+  },
+
+  {
     title: ' Marrun Glitter NailPolish ',
     description: 'OnColour',
     price: '$800.00',
@@ -88,3 +108,39 @@ const styles = StyleSheet.create({
   },
 });
 
+export default function Items(ShopName) {
+  return (
+    <ScrollView showsVerticalScrollIndicator={false}>
+      {beautyItems.map((beautyItem, index) => (
+        <View key={index}>
+          <View style={styles.ItemStyle}>
+            <ItemInfo beautyItem={beautyItem} />
+            <ItemImage beautyItem={beautyItem} />
+          </View>
+          <Divider
+            width={0.5}
+            orientation="vertical"
+            style={{marginHorizontal: 20}}
+          />
+        </View>
+      ))}
+    </ScrollView>
+  );
+}
+
+const ItemInfo = props => (
+  <View style={{width: 240, justifyContent: 'space-evenly'}}>
+    <Text style={styles.titleStyle}>{props.beautyItem.title}</Text>
+    <Text style={styles.descriptionStyle}>{props.beautyItem.description}</Text>
+    <Text style={styles.priceStyle}>{props.beautyItem.price}</Text>
+  </View>
+);
+
+const ItemImage = props => (
+  <View>
+    <Image
+      source={{uri: props.beautyItem.image}}
+      style={{width: 100, height: 100, borderRadius: 8}}
+    />
+  </View>
+);
