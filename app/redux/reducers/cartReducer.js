@@ -14,8 +14,23 @@ let cartReducer = (state = defaultState, action) => {
           items: [...newState.selectedItems.items, action.payload],
           ShopName: action.payload.ShopName,
         };
-      } 
+      } else {
+        console.log('REMOVE FROM CART');
+        newState.selectedItems = {
+          items: [
+            ...newState.selectedItems.items.filter(
+              item => item.title !== action.payload.title,
+            ),
+          ],
+          ShopName: action.payload.ShopName,
+        };
+      }
+      console.log(newState, '👉');
+      return newState;
     }
+
+    default:
+      return state;
   }
 };
 
