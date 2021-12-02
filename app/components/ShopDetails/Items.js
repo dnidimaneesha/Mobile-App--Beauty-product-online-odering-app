@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
 import {Divider} from 'react-native-elements/dist/divider/Divider';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import {useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const beautyItems = [
   {
@@ -110,6 +112,19 @@ const styles = StyleSheet.create({
 });
 
 export default function Items(ShopName) {
+
+  const dispatch = useDispatch();
+
+  const selectItem = (item, checkboxValue) =>
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {...item, ShopName: ShopName, checkboxValue: checkboxValue},
+    });
+
+  const cartItems = useSelector(state => state.cartReducer.selectedItems.items);
+
+  const isbeautyItemInCart = (beautyItem, cartItems) =>
+    Boolean(cartItems.find(item => item.title === beautyItem.title)); 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       {beautyItems.map((beautyItem, index) => (
@@ -122,6 +137,8 @@ export default function Items(ShopName) {
                 marginLeft: 20,
               }}
               fillColor="#c572c4"
+              onPress={checkboxValue => selectItem(beautyItem, checkboxValue)}
+              isChecked={isbeautyItemInCart(beautyItem, cartItems)}
             />
             <ItemInfo beautyItem={beautyItem} />
             <ItemImage beautyItem={beautyItem} />
