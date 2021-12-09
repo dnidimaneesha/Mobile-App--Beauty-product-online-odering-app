@@ -15,7 +15,7 @@ export default function SkinBtn(navigation) {
           alignItems: 'center',
           padding: 15,
           borderRadius: 30,
-          width: 350,
+          width: 320,
           position: 'relative',
         }}
         onPress={() => {
@@ -28,18 +28,9 @@ export default function SkinBtn(navigation) {
             fontWeight: '600',
             marginRight: 40,
           }}>
-          Click to select the product that
+          Click and choose your skin 
         </Text>
-        <Text
-          style={{
-            alignItems: 'center',
-            color: 'black',
-            fontSize: 18,
-            fontWeight: '600',
-            marginRight: 40,
-          }}>
-          best suits your skin
-        </Text>
+
 
         <Image
           source={require('../../assets/images/skincare.png')}
@@ -48,7 +39,7 @@ export default function SkinBtn(navigation) {
             right: 20,
             width: 35,
             height: 55,
-            top: 17,
+            top: 2,
           }}
         />
       </TouchableOpacity>
