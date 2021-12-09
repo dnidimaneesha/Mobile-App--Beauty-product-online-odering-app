@@ -30,7 +30,7 @@ export default function OrderCompleted() {
           speed={0.5}
         />
         <Text style={{fontSize: 20, fontWeight: 'bold', color: 'black'}}>
-          Your order at has been placed for RS.{totalUSD}.00🚀
+          Your order has been placed for RS.{totalUSD}.00🚀
         </Text>
         <ScrollView>
           <LottieView
