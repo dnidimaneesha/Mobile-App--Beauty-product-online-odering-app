@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
-export default function SkinBtn(navigation) {
+export default function SkinBtn() {
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -18,9 +20,7 @@ export default function SkinBtn(navigation) {
           width: 320,
           position: 'relative',
         }}
-        onPress={() => {
-          navigation.navigate('OrderCompleted');
-        }}>
+        onPress={() => navigation.navigate('Skin')}>
         <Text
           style={{
             color: 'black',
@@ -28,10 +28,8 @@ export default function SkinBtn(navigation) {
             fontWeight: '600',
             marginRight: 40,
           }}>
-          Click and choose your skin 
+          Click and choose your skin
         </Text>
-
-
         <Image
           source={require('../../assets/images/skincare.png')}
           style={{
