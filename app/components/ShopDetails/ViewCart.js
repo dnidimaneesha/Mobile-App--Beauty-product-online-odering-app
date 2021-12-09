@@ -3,7 +3,8 @@ import {View, Text, TouchableOpacity, Modal, StyleSheet} from 'react-native';
 import {useSelector} from 'react-redux';
 import OrderItem from './OderItems';
 
-export default function ViewCart() {
+
+export default function ViewCart({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
 
   const {items} = useSelector(state => state.cartReducer.selectedItems);
@@ -80,6 +81,7 @@ export default function ViewCart() {
                 }}
                 onPress={() => {
                   setModalVisible(false);
+                  navigation.navigate('OrderCompleted');
                 }}>
                 <Text style={{color: 'white', fontSize: 20}}>Checkout</Text>
                 <Text

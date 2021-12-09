@@ -9,7 +9,7 @@ export default function ShopDetails({route, navigation}) {
     <View>
       <About route={route} />
       <Items />
-      <ViewCart />
+      <ViewCart navigation={navigation} />
     </View>
   );
 }
