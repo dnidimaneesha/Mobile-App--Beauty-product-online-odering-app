@@ -79,7 +79,6 @@ export default function ViewCart() {
                   position: 'relative',
                 }}
                 onPress={() => {
-                  addOrderToFireBase();
                   setModalVisible(false);
                 }}>
                 <Text style={{color: 'white', fontSize: 20}}>Checkout</Text>
