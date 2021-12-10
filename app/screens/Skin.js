@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import Skinheader from '../components/Skin/SkinHeader';
 
 export default function Skin() {
   const navigation = useNavigation();
@@ -14,7 +15,9 @@ export default function Skin() {
     <ImageBackground
       style={{flex: 1}}
       source={require('../assets/images/4.png')}>
-
+      <View>
+        <Skinheader />
+      </View>
       {/* nomal skin btn*/}
 
       <View
@@ -178,7 +181,6 @@ export default function Skin() {
           />
         </TouchableOpacity>
       </View>
-
     </ImageBackground>
   );
 }
