@@ -14,6 +14,7 @@ export default function Skin() {
     <ImageBackground
       style={{flex: 1}}
       source={require('../assets/images/4.png')}>
+
       {/* nomal skin btn*/}
 
       <View
@@ -73,7 +74,7 @@ export default function Skin() {
             width: 200,
             position: 'relative',
           }}
-          onPress={() => navigation.navigate('nomalSkin')}>
+          onPress={() => navigation.navigate('drySkin')}>
           <Text
             style={{
               color: 'black',
@@ -114,7 +115,7 @@ export default function Skin() {
             width: 200,
             position: 'relative',
           }}
-          onPress={() => navigation.navigate('nomalSkin')}>
+          onPress={() => navigation.navigate('anceSkin')}>
           <Text
             style={{
               color: 'black',
@@ -155,7 +156,7 @@ export default function Skin() {
             width: 200,
             position: 'relative',
           }}
-          onPress={() => navigation.navigate('nomalSkin')}>
+          onPress={() => navigation.navigate('oilySkin')}>
           <Text
             style={{
               color: 'black',

@@ -10,6 +10,9 @@ import configureStore from './redux/store';
 import OrderCompleted from './screens/OrderCompleted';
 import Skin from './screens/Skin';
 import nomalSkin from './screens/nomalSkin';
+import drySkin from './screens/drySkin';
+import oilySkin from './screens/oilySkin';
+import anceSkin from './screens/anceSkin';
 
 const store = configureStore();
 
@@ -33,6 +36,9 @@ export default function RootNavigation() {
           <Stack.Screen name="OrderCompleted" component={OrderCompleted} />
           <Stack.Screen name="Skin" component={Skin} />
           <Stack.Screen name="nomalSkin" component={nomalSkin} />
+          <Stack.Screen name="drySkin" component={drySkin} />
+          <Stack.Screen name="oilySkin" component={oilySkin} />
+          <Stack.Screen name="anceSkin" component={anceSkin} />
         </Stack.Navigator>
       </NavigationContainer>
     </ReduxProvider>
