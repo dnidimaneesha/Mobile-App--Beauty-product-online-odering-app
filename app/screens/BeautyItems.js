@@ -11,7 +11,9 @@ import {
 } from 'react-native';
 import CatItems from '../components/ItemCatagory/CatItems';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
-
+import Cart from '../components/ItemCatagory/Cart';
+import {useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const items = [
   {
@@ -43,6 +45,21 @@ const items = [
 
 
 const Card = ({cat}) => {
+  const dispatch = useDispatch();
+
+  const selectItem = (item, checkboxValue) =>
+    dispatch({
+      type: 'ADD_TO_CART',
+      payload: {
+        ...item,
+        checkboxValue: checkboxValue,
+      },
+    });
+
+  const cartItems = useSelector(state => state.cartReducer.selectedItems.items);
+
+  const isbeautyItemInCart = () =>
+    Boolean(cartItems.find(item => item.title === cat.title));
 
   return (
     <View style={style.cardContainer}>
@@ -75,6 +92,8 @@ const Card = ({cat}) => {
             marginLeft: 20,
           }}
           fillColor="#c572c4"
+          onPress={checkboxValue => selectItem(cat, checkboxValue)}
+          isChecked={isbeautyItemInCart(cat, cartItems)}
         />
       </View>
     </View>
@@ -149,6 +168,9 @@ const BeautyItems = ({navigation}) => {
         data={fliteredCat}
         renderItem={({item}) => <Card cat={item} navigation={navigation} />}
       />
+      <View>
+        <Cart navigation={navigation} />
+      </View>
     </SafeAreaView>
   );
 };
