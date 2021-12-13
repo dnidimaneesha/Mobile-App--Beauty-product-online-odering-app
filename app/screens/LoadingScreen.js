@@ -5,7 +5,7 @@ import LottieView from 'lottie-react-native';
 
 export default class LoadingScreen extends Component {
   Onpress = () => {
-    this.props.navigation.navigate('Home');
+    this.props.navigation.navigate('SignIn');
   };
 
   render() {
@@ -27,7 +27,7 @@ export default class LoadingScreen extends Component {
           />
         </View>
         <View>
-          <PrimaryButton onPress={this.Onpress} title="Get Started" />
+          <PrimaryButton onPress={this.Onpress} title="Get Start" />
         </View>
       </ImageBackground>
     );

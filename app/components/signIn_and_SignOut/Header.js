@@ -1,27 +1,26 @@
 import React from 'react';
-import {Text, SafeAreaView} from 'react-native';
+import {View, Text} from 'react-native';
 
-export default function Skinheader() {
+export default function Header() {
   return (
-    <SafeAreaView
+    <View
       style={{
-        backgroundColor: '#d4a3da',
+        backgroundColor: '#f3e0f0',
         paddingVertical: 10,
         paddingLeft: 20,
         marginBottom: -6,
-        borderBottomLeftRadius: 40,
-        borderBottomRightRadius: 40,
       }}>
       <Text
         style={{
           marginTop: 10,
           textAlign: 'center',
           fontWeight: 'bold',
-          fontSize: 20,
+          fontSize: 16,
+          color:'black',
           marginBottom: 10,
         }}>
-        What is your skin type 🤔 ?
+        MY ACCOUNT
       </Text>
-    </SafeAreaView>
+    </View>
   );
 }

@@ -13,6 +13,8 @@ import nomalSkin from './screens/nomalSkin';
 import drySkin from './screens/drySkin';
 import oilySkin from './screens/oilySkin';
 import anceSkin from './screens/anceSkin';
+import SignIn from './components/signIn_and_SignOut/signIn';
+
 
 const store = configureStore();
 
@@ -30,6 +32,7 @@ export default function RootNavigation() {
           initialRouteName="LoadignScreen"
           screenOptions={screenOptions}>
           <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
+          <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="BeautyItems" component={BeautyItems} />
           <Stack.Screen name="ShopDetails" component={ShopDetails} />
