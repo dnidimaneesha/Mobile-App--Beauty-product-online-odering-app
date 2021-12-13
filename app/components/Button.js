@@ -20,7 +20,7 @@ const style = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 480,
+    marginTop: 250,
   },
 
   title: {
