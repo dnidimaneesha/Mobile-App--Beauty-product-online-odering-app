@@ -21,7 +21,8 @@ const style = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: -160,
+    
+
   },
 
   title: {

@@ -128,7 +128,7 @@ export default function ViewCart({navigation}) {
               activeOpacity={0.5}
               style={{
                 marginTop: 30,
-                backgroundColor: '#844e7c',
+                backgroundColor: '#9087dc',
                 alignItems: 'center',
                 marginLeft: 80,
                 padding: 13,

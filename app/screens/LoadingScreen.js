@@ -15,7 +15,8 @@ export default class LoadingScreen extends Component {
         source={require('../assets/photoshopScreen/welcome.png')}>
         <View
           style={{
-            marginTop: 160,
+            marginTop: -10,
+            marginBottom: -400,
             alignItems: 'center',
           }}>
           <Image
@@ -27,7 +28,7 @@ export default class LoadingScreen extends Component {
             source={require('../assets/photoshopScreen/Logo.png')}
           />
         </View>
-        <View>
+        <View style={{marginTop: 2, marginBottom: 50}}>
           <PrimaryButton onPress={this.Onpress} title="Get Started" />
         </View>
       </ImageBackground>

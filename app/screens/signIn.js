@@ -25,7 +25,7 @@ const SignIn = ({navigation}) => {
                 fontSize: 30,
                 fontWeight: 'bold',
                 color: '#302c2c',
-                marginBottom:20,
+                marginBottom: 20,
               }}>
               Log in
             </Text>
@@ -54,7 +54,7 @@ const SignIn = ({navigation}) => {
               flexDirection: 'row',
               alignItems: 'flex-end',
               justifyContent: 'center',
-              marginTop: 70,
+              marginTop: 50,
               marginBottom: 50,
             }}>
             <Text style={{color: '#808080', fontWeight: 'bold', fontSize: 16}}>
@@ -88,22 +88,23 @@ const styles = StyleSheet.create({
     color: 'white',
     paddingLeft: 30,
     borderBottomWidth: 2,
-    borderColor: '#c25cbb',
+    borderColor: '#bd8bf2',
     // eslint-disable-next-line no-dupe-keys
     borderBottomWidth: 0.5,
     flex: 1,
     fontSize: 18,
   },
   btnPrimary: {
-    backgroundColor: '#532750',
+    backgroundColor: '#aeb0f2',
     height: 60,
+    width: 300,
     borderRadius: 10,
+    marginLeft: 7,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 100,
+    marginTop: 60,
   },
   btnSignUp: {
-    backgroundColor: '#',
     height: 25,
     width: 100,
     borderRadius: 10,

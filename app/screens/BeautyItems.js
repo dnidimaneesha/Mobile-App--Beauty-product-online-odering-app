@@ -81,17 +81,17 @@ const Card = ({cat}) => {
         </View>
         <View>
           <Text style={{fontSize: 13, marginTop: 4}}>{cat?.type}</Text>
-          <Text style={{fontSize: 13, marginTop: 4}}>{cat?.price}</Text>
+          <Text style={{fontSize: 13, marginTop: 4}}>Rs.{cat?.price}</Text>
         </View>
       </View>
       <View>
         <BouncyCheckbox
           iconStyle={{
-            borderColor: '#b289b0',
+            borderColor: '#bc8ff2',
             borderRadius: 0,
             marginLeft: 20,
           }}
-          fillColor="#c572c4"
+          fillColor="#bc8ff2"
           onPress={checkboxValue => selectItem(cat, checkboxValue)}
           isChecked={isbeautyItemInCart(cat, cartItems)}
         />
@@ -140,7 +140,7 @@ const BeautyItems = ({navigation}) => {
                   style.categoryBtn,
                   {
                     backgroundColor:
-                      selectedCategoryIndex == index ? '#e5bfe4' : '#ffff',
+                      selectedCategoryIndex == index ? '#ffc2ea' : '#ffff',
                   },
                 ]}>
                 <Image
