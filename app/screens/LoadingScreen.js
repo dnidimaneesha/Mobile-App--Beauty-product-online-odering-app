@@ -12,22 +12,23 @@ export default class LoadingScreen extends Component {
     return (
       <ImageBackground
         style={{flex: 1}}
-        source={require('../assets/images/imagelogo.png')}>
-        <View>
-          <LottieView
+        source={require('../assets/photoshopScreen/welcome.png')}>
+        <View
+          style={{
+            marginTop: 160,
+            alignItems: 'center',
+          }}>
+          <Image
             style={{
-              height: 150,
-              alignSelf: 'center',
-              marginBottom: 10,
-              marginTop: 120,
+              width: '80%',
+              height: '80%',
+              resizeMode: 'contain',
             }}
-            source={require('../assets/animations/love-hearts.json')}
-            autoPlay
-            speed={0.8}
+            source={require('../assets/photoshopScreen/Logo.png')}
           />
         </View>
         <View>
-          <PrimaryButton onPress={this.Onpress} title="Get Start" />
+          <PrimaryButton onPress={this.Onpress} title="Get Started" />
         </View>
       </ImageBackground>
     );

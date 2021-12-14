@@ -1,41 +1,36 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  ImageBackground,
+} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import Header from '../../components/signIn_and_SignOut/Header';
 
 const SignIn = ({navigation}) => {
   return (
-    <>
-      <View>
-        <Header />
-      </View>
+    <ImageBackground
+      style={{flex: 1}}
+      source={require('../assets/photoshopScreen/signin.png')}>
       <SafeAreaView
         // eslint-disable-next-line react-native/no-inline-styles
-        style={{paddingHorizontal: 20, flex: 1, backgroundColor: '#fff'}}>
+        style={{paddingHorizontal: 20, flex: 1, marginTop: 255}}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View>
             <Text
               style={{
-                fontSize: 32,
+                fontSize: 30,
                 fontWeight: 'bold',
-                color: 'black',
-                textAlign: 'center',
-                marginTop: 20,
+                color: '#302c2c',
+                marginBottom:20,
               }}>
-              Online Store Lover
-            </Text>
-            <Text
-              style={{
-                fontSize: 19,
-                fontWeight: 'bold',
-                color: '#808080',
-                marginTop: 30,
-              }}>
-              Sign in to continue
+              Log in
             </Text>
           </View>
-          <View style={{marginTop: 40}}>
+          <View style={{marginTop: -20}}>
             <View style={styles.input}>
               <TextInput placeholder="Email" style={styles.inputcontent} />
             </View>
@@ -77,7 +72,7 @@ const SignIn = ({navigation}) => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </ImageBackground>
   );
 };
 
@@ -87,6 +82,7 @@ const styles = StyleSheet.create({
   input: {
     flexDirection: 'row',
     marginTop: 20,
+    color: '#dcd7dc',
   },
   inputcontent: {
     color: 'white',

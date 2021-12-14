@@ -13,20 +13,21 @@ const PrimaryButton = ({title, onPress = () => {}}) => {
 
 const style = StyleSheet.create({
   btnContainer: {
-    backgroundColor: '#e87acb',
-    height: 60,
-    marginLeft: 20,
+    backgroundColor: '#9087dc',
+    width: 230,
+    height: 56,
+    marginLeft: 58,
     marginRight: 20,
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 250,
+    marginTop: -160,
   },
 
   title: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 22,
   },
 });
 

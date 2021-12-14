@@ -13,7 +13,7 @@ import nomalSkin from './screens/nomalSkin';
 import drySkin from './screens/drySkin';
 import oilySkin from './screens/oilySkin';
 import anceSkin from './screens/anceSkin';
-import SignIn from './components/signIn_and_SignOut/signIn';
+import SignIn from './screens/signIn';
 
 
 const store = configureStore();
