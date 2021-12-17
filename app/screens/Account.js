@@ -8,7 +8,7 @@ import {
   StyleSheet,
   ImageBackground,
 } from 'react-native';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Account = ({navigation}) => {
   return (

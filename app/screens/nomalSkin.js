@@ -14,6 +14,7 @@ import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import Cart from '../components/ItemCatagory/Cart';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
+import Bottom from '../components/home/Bottom';
 
 const items = [
   {
@@ -87,7 +88,6 @@ const Card = ({cat}) => {
   );
 };
 
-
 const nomalSkin = ({navigation}) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
 
@@ -146,7 +146,7 @@ const nomalSkin = ({navigation}) => {
   };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-    <View style={{backgroundColor: '#bc8ff2', padding: 15}}>
+      <View style={{backgroundColor: '#bc8ff2', padding: 15}}>
         <Text
           style={{
             textAlign: 'center',
@@ -167,6 +167,7 @@ const nomalSkin = ({navigation}) => {
       <View>
         <Cart navigation={navigation} />
       </View>
+      <Bottom />
     </SafeAreaView>
   );
 };

@@ -14,6 +14,7 @@ import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import Cart from '../components/ItemCatagory/Cart';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
+import Bottom from '../components/home/Bottom';
 
 const items = [
   {
@@ -167,6 +168,7 @@ const oilySkin = ({navigation}) => {
       <View>
         <Cart navigation={navigation} />
       </View>
+      <Bottom/>
     </SafeAreaView>
   );
 };
