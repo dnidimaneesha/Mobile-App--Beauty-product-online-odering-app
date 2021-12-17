@@ -16,6 +16,8 @@ import anceSkin from './screens/anceSkin';
 import SignIn from './screens/signIn';
 import SignUp from './screens/SignUp';
 import Account from './screens/Account';
+import Deliveryboy from './screens/Deliveryboy';
+import Pay from './screens/Pay';
 
 
 const store = configureStore();
@@ -36,6 +38,8 @@ export default function RootNavigation() {
           <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="Deliveryboy" component={Deliveryboy} />
+          <Stack.Screen name="Pay" component={Pay} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Account" component={Account} />
           <Stack.Screen name="BeautyItems" component={BeautyItems} />
