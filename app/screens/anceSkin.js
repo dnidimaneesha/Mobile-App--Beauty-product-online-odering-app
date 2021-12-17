@@ -87,7 +87,6 @@ const Card = ({cat}) => {
   );
 };
 
-
 const anceSkin = ({navigation}) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
 
@@ -146,6 +145,17 @@ const anceSkin = ({navigation}) => {
   };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+      <View style={{backgroundColor: '#bc8ff2', padding: 15}}>
+        <Text
+          style={{
+            textAlign: 'center',
+            fontSize: 18,
+            color: '#fff',
+            fontWeight: 'bold',
+          }}>
+          Ance Skin
+        </Text>
+      </View>
       <View>
         <ListCategories />
       </View>

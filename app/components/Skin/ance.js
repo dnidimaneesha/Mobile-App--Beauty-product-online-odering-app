@@ -145,7 +145,6 @@ const CatItems = [
         type: 'Brand Name: LOTUS',
         price: '350.00',
       },
-     
       {
         id: '6',
         title: 'Shea butter & bee honey body lotion',

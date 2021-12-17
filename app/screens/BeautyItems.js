@@ -43,7 +43,6 @@ const items = [
   },
 ];
 
-
 const Card = ({cat}) => {
   const dispatch = useDispatch();
 
@@ -99,9 +98,6 @@ const Card = ({cat}) => {
     </View>
   );
 };
-
-
-
 
 const BeautyItems = ({navigation}) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
@@ -161,6 +157,17 @@ const BeautyItems = ({navigation}) => {
   };
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+      <View style={{backgroundColor: '#9087dc', padding: 15}}>
+        <Text
+          style={{
+            textAlign: 'center',
+            fontSize: 18,
+            color: '#fff',
+            fontWeight: 'bold',
+          }}>
+          Items category
+        </Text>
+      </View>
       <View>
         <ListCategories />
       </View>
