@@ -14,6 +14,8 @@ import drySkin from './screens/drySkin';
 import oilySkin from './screens/oilySkin';
 import anceSkin from './screens/anceSkin';
 import SignIn from './screens/signIn';
+import SignUp from './screens/SignUp';
+import Account from './screens/Account';
 
 
 const store = configureStore();
@@ -33,7 +35,9 @@ export default function RootNavigation() {
           screenOptions={screenOptions}>
           <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
           <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Account" component={Account} />
           <Stack.Screen name="BeautyItems" component={BeautyItems} />
           <Stack.Screen name="ShopDetails" component={ShopDetails} />
           <Stack.Screen name="OrderCompleted" component={OrderCompleted} />

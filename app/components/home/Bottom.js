@@ -22,7 +22,7 @@ export default function BottomTabs() {
       <TouchableOpacity onPress={() => navigation.navigate('Home')}>
         <Icon icon="home" text="Home" />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('BeautyItems')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Account')}>
         <Icon icon="user" text="Account" />
       </TouchableOpacity>
     </View>
