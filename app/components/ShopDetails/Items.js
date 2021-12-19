@@ -4,6 +4,7 @@ import {Divider} from 'react-native-elements/dist/divider/Divider';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
+import LottieView from 'lottie-react-native';
 
 const beautyItems = [
   {
@@ -125,6 +126,8 @@ export default function Items(ShopName) {
 
   const isbeautyItemInCart = (beautyItem, cartItems) =>
     Boolean(cartItems.find(item => item.title === beautyItem.title)); 
+
+    
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       {beautyItems.map((beautyItem, index) => (

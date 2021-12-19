@@ -3,9 +3,11 @@ import {View, Text, TouchableOpacity, Modal, StyleSheet} from 'react-native';
 import {useSelector} from 'react-redux';
 import OrderItem from './OderItems';
 import {firebase} from '@react-native-firebase/firestore';
+import LottieView from 'lottie-react-native';
 
 export default function ViewCart({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const {items} = useSelector(state => state.cartReducer.selectedItems);
   const total = items
@@ -17,13 +19,20 @@ export default function ViewCart({navigation}) {
     currency: 'USD',
   });
 
-  const addOrderToFirebase = () => {
+  const addOrderToFireBase = () => {
+    setLoading(true);
     const db = firebase.firestore();
-    db.collection('orders').add({
-      items: items,
-      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
-    setModalVisible(false);
+    db.collection('orders')
+      .add({
+        items: items,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      })
+      .then(() => {
+        setTimeout(() => {
+          setLoading(false);
+          navigation.navigate('OrderCompleted');
+        }, 1000);
+      });
   };
 
   const styles = StyleSheet.create({
@@ -89,10 +98,9 @@ export default function ViewCart({navigation}) {
                   position: 'relative',
                 }}
                 onPress={() => {
-                  navigation.navigate('OrderCompleted');
-                  addOrderToFirebase();
+                  addOrderToFireBase();
+                  setModalVisible(false);
                 }}>
-
                 <Text style={{color: 'white', fontSize: 20}}>Checkout</Text>
                 <Text
                   style={{
@@ -166,6 +174,27 @@ export default function ViewCart({navigation}) {
               </Text>
             </TouchableOpacity>
           </View>
+        </View>
+      ) : (
+        <></>
+      )}
+      {loading ? (
+        <View
+          style={{
+            backgroundColor: 'black',
+            position: 'absolute',
+            opacity: 0.6,
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%',
+            width: '100%',
+          }}>
+          <LottieView
+            style={{height: 200}}
+            source={require('../../assets/animations/cherryblossom.json')}
+            autoPlay
+            speed={3}
+          />
         </View>
       ) : (
         <></>
