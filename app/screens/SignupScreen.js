@@ -10,11 +10,11 @@ import {
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
-const SignIn = ({navigation}) => {
+const SignUp = ({navigation}) => {
   return (
     <ImageBackground
       style={{flex: 1}}
-      source={require('../assets/photoshopScreen/signin.png')}>
+      source={require('../assets/photoshopScreen/signup.png')}>
       <SafeAreaView
         // eslint-disable-next-line react-native/no-inline-styles
         style={{paddingHorizontal: 20, flex: 1, marginTop: 255}}>
@@ -27,7 +27,7 @@ const SignIn = ({navigation}) => {
                 color: '#302c2c',
                 marginBottom: 20,
               }}>
-              Log in
+              Sign Up
             </Text>
           </View>
           <View style={{marginTop: -20}}>
@@ -41,10 +41,10 @@ const SignIn = ({navigation}) => {
                 secureTextEntry
               />
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
               <View style={styles.btnPrimary}>
                 <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
-                  Sign In
+                  Sign Up
                 </Text>
               </View>
             </TouchableOpacity>
@@ -58,15 +58,15 @@ const SignIn = ({navigation}) => {
               marginBottom: 50,
             }}>
             <Text style={{color: '#808080', fontWeight: 'bold', fontSize: 16}}>
-              Don`t have an account ?
+              Alredy have an account.
             </Text>
             <TouchableOpacity
               style={styles.btnSignUp}
-              onPress={() => navigation.navigate('SignUp')}>
+              onPress={() => navigation.navigate('SignIn')}>
               <Text
                 style={{color: '#9c3796', fontWeight: 'bold', fontSize: 18}}>
                 {' '}
-                Sign up{' '}
+                Sign in{' '}
               </Text>
             </TouchableOpacity>
           </View>
@@ -76,7 +76,7 @@ const SignIn = ({navigation}) => {
   );
 };
 
-export default SignIn;
+export default SignUp;
 
 const styles = StyleSheet.create({
   input: {

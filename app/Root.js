@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import RootNavigation from './navigationRes';
+import RootNavigation from './navigation/navigationRes';
 
 export default class Root extends Component {
   render() {

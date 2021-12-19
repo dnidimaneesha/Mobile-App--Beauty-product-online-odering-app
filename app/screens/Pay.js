@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import LottieView from 'lottie-react-native';
+
 
 export default function Pay({navigation}) {
   return (
