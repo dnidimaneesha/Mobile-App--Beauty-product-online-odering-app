@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {
   View,
   Text,
-  Image,
+  ImageBackground,
   StyleSheet,
   KeyboardAvoidingView,
   TouchableOpacity,
@@ -28,33 +28,66 @@ const LoginScreen = ({navigation}) => {
     }
   };
   return (
-    <KeyboardAvoidingView behavior="position">
-      <View style={styles.box1}>
-        <Text style={styles.text}>Log in</Text>
-      </View>
-      <View style={styles.box2}>
-        <TextInput
-          label="Email"
-          value={email}
-          mode="outlined"
-          onChangeText={text => setEmail(text)}
-        />
-        <TextInput
-          label="password"
-          value={password}
-          mode="outlined"
-          secureTextEntry={true}
-          onChangeText={text => setPassword(text)}
-        />
-        <Button mode="contained" onPress={() => userLogin()}>
-          Login
-        </Button>
-        <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
-          <Text style={{textAlign: 'center'}}>Dont have a account ?</Text>
-          <Text style={{textAlign: 'auto', color: '#ffc2ea'}}>Sign Up</Text>
-        </TouchableOpacity>
-      </View>
-    </KeyboardAvoidingView>
+    <ImageBackground
+      style={{flex: 1}}
+      source={require('../assets/photoshopScreen/signin.png')}>
+      <KeyboardAvoidingView behavior="position">
+        <View>
+          <Text
+            style={{
+              fontSize: 30,
+              fontWeight: 'bold',
+              color: '#302c2c',
+              marginBottom: 15,
+              marginTop: 230,
+              marginLeft: 40,
+            }}>
+            Log in
+          </Text>
+        </View>
+        <View style={styles.box2}>
+          <TextInput
+            label="Email"
+            value={email}
+            mode="outlined"
+            onChangeText={text => setEmail(text)}
+          />
+          <TextInput
+            label="password"
+            value={password}
+            mode="outlined"
+            secureTextEntry={true}
+            onChangeText={text => setPassword(text)}
+          />
+          <Button
+            mode="contained"
+            style={{marginTop: 30}}
+            onPress={() => userLogin()}>
+            Login
+          </Button>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+              marginTop: 50,
+            }}>
+            <Text style={{color: '#808080', fontWeight: 'bold', fontSize: 16}}>
+              Don`t have an account ?
+            </Text>
+            <TouchableOpacity
+              style={styles.btnSignUp}
+              onPress={() => navigation.navigate('SignUp')}>
+              <Text
+                style={{color: '#9c3796', fontWeight: 'bold', fontSize: 18}}>
+                {' '}
+                Sign up{' '}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </KeyboardAvoidingView>
+    </ImageBackground>
   );
 };
 
