@@ -188,6 +188,7 @@ export default function ViewCart({navigation}) {
             alignItems: 'center',
             height: '100%',
             width: '100%',
+            marginTop: -250,
           }}>
           <LottieView
             style={{height: 200}}

@@ -1,115 +1,85 @@
-import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useState} from 'react';
 import {
-  SafeAreaView,
   View,
   Text,
-  TextInput,
+  Image,
   StyleSheet,
-  ImageBackground,
+  KeyboardAvoidingView,
+  TouchableOpacity,
+  Alert,
 } from 'react-native';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import {TextInput, Button} from 'react-native-paper';
+import auth from '@react-native-firebase/auth';
 
-const SignUp = ({navigation}) => {
+import firestore from '@react-native-firebase/firestore';
+import messaging from '@react-native-firebase/messaging';
+
+const SignupScreen = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const userSignup = async () => {
+    if (!email || !password) {
+      Alert.alert('please all all the fields');
+      return;
+    }
+    try {
+      await auth().createUserWithEmailAndPassword(email, password);
+      messaging()
+        .getToken()
+        .then(token => {
+          firestore().collection('usertoken').add({
+            token: token,
+          });
+        });
+    } catch (err) {
+      console.log(err);
+      Alert.alert('something went wrong please try different password');
+    }
+  };
   return (
-    <ImageBackground
-      style={{flex: 1}}
-      source={require('../assets/photoshopScreen/signup.png')}>
-      <SafeAreaView
-        // eslint-disable-next-line react-native/no-inline-styles
-        style={{paddingHorizontal: 20, flex: 1, marginTop: 255}}>
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View>
-            <Text
-              style={{
-                fontSize: 30,
-                fontWeight: 'bold',
-                color: '#302c2c',
-                marginBottom: 20,
-              }}>
-              Sign Up
-            </Text>
-          </View>
-          <View style={{marginTop: -20}}>
-            <View style={styles.input}>
-              <TextInput placeholder="Email" style={styles.inputcontent} />
-            </View>
-            <View style={styles.input}>
-              <TextInput
-                placeholder="Password"
-                style={styles.inputcontent}
-                secureTextEntry
-              />
-            </View>
-            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-              <View style={styles.btnPrimary}>
-                <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 20}}>
-                  Sign Up
-                </Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'flex-end',
-              justifyContent: 'center',
-              marginTop: 50,
-              marginBottom: 50,
-            }}>
-            <Text style={{color: '#808080', fontWeight: 'bold', fontSize: 16}}>
-              Alredy have an account.
-            </Text>
-            <TouchableOpacity
-              style={styles.btnSignUp}
-              onPress={() => navigation.navigate('SignIn')}>
-              <Text
-                style={{color: '#9c3796', fontWeight: 'bold', fontSize: 18}}>
-                {' '}
-                Sign in{' '}
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </ImageBackground>
+    <KeyboardAvoidingView behavior="position">
+      <View style={styles.box1}>
+        <Text style={styles.text}>Please Signup</Text>
+      </View>
+      <View style={styles.box2}>
+        <TextInput
+          label="Email"
+          value={email}
+          mode="outlined"
+          onChangeText={text => setEmail(text)}
+        />
+        <TextInput
+          label="password"
+          value={password}
+          mode="outlined"
+          secureTextEntry={true}
+          onChangeText={text => setPassword(text)}
+        />
+        <Button mode="contained" onPress={() => userSignup()}>
+          Signup
+        </Button>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text style={{textAlign: 'center'}}>login?</Text>
+        </TouchableOpacity>
+      </View>
+    </KeyboardAvoidingView>
   );
 };
 
-export default SignUp;
-
 const styles = StyleSheet.create({
-  input: {
-    flexDirection: 'row',
-    marginTop: 20,
-    color: '#dcd7dc',
-  },
-  inputcontent: {
-    color: 'white',
-    paddingLeft: 30,
-    borderBottomWidth: 2,
-    borderColor: '#bd8bf2',
-    // eslint-disable-next-line no-dupe-keys
-    borderBottomWidth: 0.5,
-    flex: 1,
-    fontSize: 18,
-  },
-  btnPrimary: {
-    backgroundColor: '#aeb0f2',
-    height: 60,
-    width: 300,
-    borderRadius: 10,
-    marginLeft: 7,
-    justifyContent: 'center',
+  box1: {
     alignItems: 'center',
-    marginTop: 60,
+    marginTop: 180,
   },
-  btnSignUp: {
-    height: 25,
-    width: 100,
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 5,
+  box2: {
+    paddingHorizontal: 40,
+    height: '50%',
+    justifyContent: 'space-evenly',
+  },
+  text: {
+    fontSize: 22,
   },
 });
+
+export default SignupScreen;
