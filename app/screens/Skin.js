@@ -34,9 +34,11 @@ export default function Skin() {
               backgroundColor: '#c79bbf',
               alignItems: 'center',
               padding: 15,
-              borderRadius: 30,
+              borderRadius: 10,
               width: 220,
               position: 'relative',
+              shadowOpacity: 80,
+              elevation: 15,
             }}
             onPress={() => navigation.navigate('nomalSkin')}>
             <Text
@@ -54,7 +56,7 @@ export default function Skin() {
                 position: 'absolute',
                 right: 20,
                 width: 35,
-                height: 55,
+                height: 53,
                 top: 2,
               }}
             />
@@ -75,9 +77,11 @@ export default function Skin() {
               backgroundColor: '#f7e8f1',
               alignItems: 'center',
               padding: 15,
-              borderRadius: 30,
+              borderRadius: 10,
               width: 200,
               position: 'relative',
+              shadowOpacity: 80,
+              elevation: 15,
             }}
             onPress={() => navigation.navigate('drySkin')}>
             <Text
@@ -95,7 +99,7 @@ export default function Skin() {
                 position: 'absolute',
                 right: 20,
                 width: 35,
-                height: 55,
+                height: 53,
                 top: 2,
               }}
             />
@@ -116,9 +120,11 @@ export default function Skin() {
               backgroundColor: '#c79bbf',
               alignItems: 'center',
               padding: 15,
-              borderRadius: 30,
+              borderRadius: 10,
               width: 200,
               position: 'relative',
+              shadowOpacity: 80,
+              elevation: 15,
             }}
             onPress={() => navigation.navigate('anceSkin')}>
             <Text
@@ -136,7 +142,7 @@ export default function Skin() {
                 position: 'absolute',
                 right: 20,
                 width: 35,
-                height: 55,
+                height: 53,
                 top: 2,
               }}
             />
@@ -157,9 +163,11 @@ export default function Skin() {
               backgroundColor: '#f7e8f1',
               alignItems: 'center',
               padding: 15,
-              borderRadius: 30,
+              borderRadius: 10,
               width: 200,
               position: 'relative',
+              shadowOpacity: 80,
+              elevation: 15,
             }}
             onPress={() => navigation.navigate('oilySkin')}>
             <Text
@@ -177,7 +185,7 @@ export default function Skin() {
                 position: 'absolute',
                 right: 20,
                 width: 35,
-                height: 55,
+                height: 53,
                 top: 2,
               }}
             />
