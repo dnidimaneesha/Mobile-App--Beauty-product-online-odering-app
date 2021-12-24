@@ -24,13 +24,6 @@ const CatItems = [
         price: '300.00',
       },
       {
-        id: '4',
-        title: 'Tea Tree oil face wash',
-        image: require('../../assets/icons/oily.jpg'),
-        type: 'Brand Name: 4ever',
-        price: '150.00',
-      },
-      {
         id: '5',
         title: 'Peparmint face wash',
         image: require('../../assets/icons/af2.png'),
