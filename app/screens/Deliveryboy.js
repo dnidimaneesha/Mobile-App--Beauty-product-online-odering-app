@@ -36,7 +36,7 @@ export default function Deliveryboy({navigation}) {
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate('Pay')}
-          style={{alignItems: 'flex-end', marginTop: 145}}>
+          style={{alignItems: 'flex-end', marginTop: 115}}>
           <Image
             style={{
               width: 40,

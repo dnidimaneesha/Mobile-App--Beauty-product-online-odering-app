@@ -16,9 +16,11 @@ export default function SkinBtn() {
           backgroundColor: '#f7e8f1',
           alignItems: 'center',
           padding: 15,
-          borderRadius: 30,
+          borderRadius: 10,
           width: 320,
           position: 'relative',
+          shadowOpacity: 80,
+          elevation: 15,
         }}
         onPress={() => navigation.navigate('Skin')}>
         <Text

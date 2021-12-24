@@ -31,7 +31,7 @@ export default function Pay({navigation}) {
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate('Home')}
-          style={{alignItems: 'flex-end', marginTop: 140}}>
+          style={{alignItems: 'flex-end', marginTop: 115}}>
           <Text
             style={{
               fontSize: 20,

@@ -21,6 +21,8 @@ const style = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
+    shadowOpacity: 90,
+    elevation: 15,
     
 
   },
